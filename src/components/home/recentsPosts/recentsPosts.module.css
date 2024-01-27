@@ -1,0 +1,142 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+  margin-top: 6rem;
+  gap: 20px;
+}
+
+.h2 {
+  font-size: 45px;
+  font-weight: 700;  
+}
+
+.desc {
+  text-align: center;
+  padding: 0 20rem 0 20rem;
+}
+
+.containerPosts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  margin-top: 2rem;
+  width: 95%;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.h3 {
+  font-weight: 700;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 1px solid #000;
+  color: #000;
+  font-weight: 700;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.buttonBlog {
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  background-color: #0d2847;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.buttonBlog:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 1024px) {
+  .desc {
+    padding: 0 10rem 0 10rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .h2 {
+    font-size: 30px;
+  }
+
+  .desc {
+    padding: 0 3rem 0 3rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .h2 {
+    font-size: 22px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

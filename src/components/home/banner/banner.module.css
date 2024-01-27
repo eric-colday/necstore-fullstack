@@ -1,0 +1,69 @@
+.banner {
+  width: 100%;
+  height: 70vh;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.bannerImg {
+  background-image: url("../../../../public/home/insouciant.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.bannerText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+  padding: 4rem 8rem 0rem 4rem;
+  text-align: right;
+  color: white;
+}
+
+.bannerTitle {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.cardTimer {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.bannerButton {
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  background-color: #0d2847;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.bannerButton:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+  .bannerText {
+    padding: 4rem 2rem 0rem 4rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .bannerButton {
+    font-size: 1rem;
+  }
+
+  .cardTimer {
+    font-size: 3rem;
+  }
+}

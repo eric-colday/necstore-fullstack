@@ -1,0 +1,144 @@
+.cart2 {
+  padding-top: 55px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cartTttle {
+  padding: 40px;
+}
+
+.cartCont {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  border-top: 1px solid;
+  padding-top: 20px;
+}
+
+.cartWrap {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.cartImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cartInfo2 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cartButtonsContainer {
+  display: flex;
+  gap: 25px;
+}
+
+.cartButtons {
+  display: flex;
+  align-items: center;
+}
+
+.buttonMath {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: white;
+}
+
+.buttonQuantity {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid;
+}
+
+.cartPay {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  padding: 80px;
+}
+
+.buttonFinals {
+  display: flex;
+  gap: 20px;
+}
+
+.cartButton {
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cartButton:hover {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+
+.emptyCart {
+  display: flex;
+  align-items: center;
+  gap: 90px;
+  padding-bottom: 80px;
+}
+
+.cartTotal {
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+@media screen and (max-width: 768px) {
+  .cartButtonsContainer {
+    flex-direction: column;
+  }
+
+  .cartPay {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .emptyCart {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .cartButtonsContainer {
+    flex-direction: column;
+  }
+
+  .cartCont {
+    flex-direction: column;
+  }
+
+  .cartInfo2 {
+    align-items: center;
+  }
+
+  .buttonFinals {
+    flex-direction: column;
+  }
+}

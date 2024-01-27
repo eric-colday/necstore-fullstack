@@ -1,0 +1,15 @@
+export default function robots() {
+    return {
+      rules: {
+        userAgent: '*',
+        allow: '/',
+        Crawl-delay: 10,
+        disallow: '/connexion',
+        disallow: '/inscription',
+        disallow: '/panier',
+        disallow: '/boutique?cat=',
+        disallow: '/blog?cat=',
+      },
+      sitemap: 'https://necstore.vercel.app/sitemap.xml',
+    }
+  }

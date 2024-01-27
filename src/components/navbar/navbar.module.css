@@ -1,0 +1,155 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-around;
+  height: 80px;
+  align-items: center;
+  border-bottom: 1px solid;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.searchContainer {
+  border: 0.5px solid;
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+  padding: 5px;
+}
+
+.input {
+  border: none;
+  width: 100%;
+}
+
+.articleBox {
+  width: 197px;
+  margin-top: 9px;
+  border: 0.5px solid;
+  position: absolute;
+  top: 3rem;
+  z-index: 10;
+}
+
+.listItem {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 30px;
+  color: #468bff;
+}
+
+.burger {
+  display: none;
+}
+
+.hiddenBurger {
+  display: none;
+}
+
+.hiddenCloseIcon {
+  display: none;
+}
+
+.linksContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100vw;
+  height: 400vw;
+  position: absolute;
+  padding-top: 16rem;
+}
+
+.hiddenLink {
+  font-size: 16px;
+}
+
+.link {
+  font-size: 28px;
+}
+
+.closeIcon {
+  cursor: pointer;
+  z-index: 100;
+  color: #468bff;
+  font-size: 30px;
+}
+
+.user {
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 926px) {
+  .links {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+    color: #468bff;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  .linksContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+    right: 0;
+    left: 0;
+  }
+
+  .closeIcon {
+    cursor: pointer;
+    z-index: 100;
+    color: #468bff;
+    font-size: 30px;
+  }
+  .link {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 533px) {
+  .searchContainer {
+    border: none;
+  }
+  .input {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .content {
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 348px) {
+  .logo {
+    font-size: 20px;
+  }
+}

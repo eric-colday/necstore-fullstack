@@ -1,0 +1,26 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 100px;
+}
+.left {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  color: #468bff;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.copyright {
+  font-size: 12px;
+}
+
+@media screen and (max-width: 375px) {
+  .footer{
+    flex-direction: column;
+  }
+}
