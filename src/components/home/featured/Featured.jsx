@@ -6,29 +6,26 @@ import { notFound } from "next/navigation";
 
 const BASE_URL = process.env.NEXTAUTH_URL;
 
-// async function getData() {
-//   const res = await fetch(
-//     `${BASE_URL}/api/products`,
-//     {
-//       cache: "no-store",
-//     }
-//   );
-//   if (!res.ok) {
-//     throw new Error("Failed to load data."); 
-//   }
-
-//   return res.json();
-// }
-
-const getData = () => {
-  const data = Products;
-
-  if (data) {
-    return data;
+async function getData() {
+  const res = await fetch(`${BASE_URL}/api/products`, {
+    cache: "no-store",
+  });
+  if (!res.ok) {
+    throw new Error("Failed to load data.");
   }
 
-  return notFound();
-};
+  return res.json();
+}
+
+// const getData = () => {
+//   const data = Products;
+
+//   if (data) {
+//     return data;
+//   }
+
+//   return notFound();
+// };
 
 const Featured = async () => {
   const data = await getData();
@@ -43,7 +40,7 @@ const Featured = async () => {
         </p>
       </div>
       <div className={styles.containerProducts}>
-        <Card data={data}/>
+        <Card data={data} />
       </div>
     </div>
   );
