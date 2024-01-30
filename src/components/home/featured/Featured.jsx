@@ -6,7 +6,7 @@ import { notFound } from "next/navigation";
 
 const BASE_URL = process.env.NEXTAUTH_URL;
 
-async function getData(page, cat) {
+async function getData() {
   const res = await fetch(
     `${BASE_URL}/api/products`,
     {
