@@ -4,7 +4,7 @@ import React from "react";
 import styles from "./productCategory.module.css";
 
 async function getData() {
-  const res = await fetch(`http://localhost:3000/api/catprod`,
+  const res = await fetch(`${BASE_URL}/api/catprod`,
     {
       cache: "no-store",
     }

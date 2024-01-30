@@ -5,9 +5,11 @@ import { notFound } from "next/navigation";
 import { Posts } from "../../../data";
 import Pagination from "../../pagination/Pagination";
 
+const BASE_URL = process.env.NEXTAUTH_URL;
+
 async function getData(page, cat) {
   const res = await fetch(
-    `http://localhost:3000/api/posts?page=${page}&cat=${cat || ""}`,
+    `${BASE_URL}/api/posts?page=${page}&cat=${cat || ""}`,
     {
       cache: "no-store",
     }

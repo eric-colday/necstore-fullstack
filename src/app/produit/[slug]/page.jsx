@@ -5,8 +5,10 @@ import React from "react";
 import styles from "./produit.module.css";
 import { notFound } from "next/navigation";
 
+const BASE_URL = process.env.NEXTAUTH_URL;
+
 async function getData(slug) {
-  const res = await fetch("http://localhost:3000/api/products/" + slug, {
+  const res = await fetch(`${BASE_URL}/api/products/` + slug, {
     cache: "no-store", 
   });
 

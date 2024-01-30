@@ -4,9 +4,11 @@ import Card from "./Card";
 import { Products } from "../../../data.js";
 import { notFound } from "next/navigation";
 
+const BASE_URL = process.env.NEXTAUTH_URL;
+
 async function getData(page, cat) {
   const res = await fetch(
-    `http://localhost:3000/api/products`,
+    `${BASE_URL}/api/products`,
     {
       cache: "no-store",
     }

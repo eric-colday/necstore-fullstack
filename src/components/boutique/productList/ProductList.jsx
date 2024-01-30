@@ -3,9 +3,11 @@ import { Products } from "../../../data";
 import Link from "next/link";
 import styles from "./productList.module.css";
 
+const BASE_URL = process.env.NEXTAUTH_URL;
+
 async function getData(page, cat) {
   const res = await fetch(
-    `http://localhost:3000/api/products?page=${page}&cat=${cat || ""}`,
+    `${BASE_URL}/api/products?page=${page}&cat=${cat || ""}`,
     {
       cache: "no-store",
     }

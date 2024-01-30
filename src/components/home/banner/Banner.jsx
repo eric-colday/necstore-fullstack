@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./banner.module.css";
 
 const Banner = () => {
-  let difference = +new Date(`12/31/2023`) - +new Date();
+  let difference = +new Date(`12/31/2024`) - +new Date();
   const [delay, setDelay] = useState(difference);
 
   const d = Math.floor(difference / (1000 * 60 * 60 * 24));
@@ -31,7 +31,7 @@ const Banner = () => {
     <div className={styles.banner}>
       <div className={styles.bannerImg}>
         <div className={styles.bannerText}>
-          <h2 className={styles.bannerTitle}>Solde de Noël</h2>
+          <h2 className={styles.bannerTitle}>Solde</h2>
           <p className={styles.bannerDescription}>
             Jusqu'à 50% de réduction sur les articles sélectionnés
           </p>
