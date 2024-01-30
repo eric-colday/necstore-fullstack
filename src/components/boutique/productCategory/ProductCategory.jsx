@@ -3,28 +3,28 @@ import Link from "next/link";
 import React from "react";
 import styles from "./productCategory.module.css";
 
-async function getData() {
-  const res = await fetch(`${BASE_URL}/api/catprod`,
-    {
-      cache: "no-store",
-    }
-  );
-  if (!res.ok) {
-    throw new Error("Failed to load data.");
-  }
-
-  return res.json();
-}
-
-// const getData = () => {
-//   const data = CategoriesProducts;
-
-//   if (data) {
-//     return data;
+// async function getData() {
+//   const res = await fetch(`${BASE_URL}/api/catprod`,
+//     {
+//       cache: "no-store",
+//     }
+//   );
+//   if (!res.ok) {
+//     throw new Error("Failed to load data.");
 //   }
 
-//   return notFound(); 
-// };
+//   return res.json();
+// }
+
+const getData = () => {
+  const data = CategoriesProducts;
+
+  if (data) {
+    return data;
+  }
+
+  return notFound(); 
+};
 
 const ProductCategory = async () => {
   const data = await getData();
