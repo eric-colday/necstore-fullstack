@@ -5,6 +5,7 @@ import styles from "./commandes.module.css";
 import { Orders } from "../../data.js";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
+import Table from "../../components/commandes/Table";
 
 const getData = () => {
   const data = Orders;
@@ -73,6 +74,7 @@ const Commandes = () => {
                     ))}
                   </div>
                 </div>
+              <Table data={data}/>
               </div>
             ))}
           </div>
