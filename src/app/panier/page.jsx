@@ -31,8 +31,8 @@ const Panier = () => {
   const handleClick = async () => {
     const body = {
       products: products,
-      total: totalPrice(),
-      statut: "En attente",
+      amount: totalPrice(),
+      status: "En attente de paiement!",
       userEmail: session.user.email,
     };
     try {
@@ -41,14 +41,10 @@ const Panier = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(body),
+        body: JSON.stringify(body), 
       });
       const data = await res.json();
-      if (data) {
-        dispatch(resetCart());
-        toast.success("Commande validée !");
-        router.push("/commandes");
-      }
+      router.push(`/pay/${data.id}`);
     } catch (error) {
       console.log(error);
     }

@@ -1,4 +1,6 @@
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --max-width: 1100px;
@@ -116,7 +118,7 @@ a {
   color: #bbb;
 }
 
-.container {
+.containerGlobal {
   padding-top: 5rem;
   padding-bottom: 5rem;
 }

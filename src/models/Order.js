@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 
 const orderSchema = new Schema(
   {
-    // userId: { type: String, required: true },
+    // userId: { type: String, required: true }, 
     products: [
       {
         productId: {
@@ -19,10 +19,10 @@ const orderSchema = new Schema(
         },
       },
     ],
-    total: { type: Number },
-    statut: { type: String },
-    // intent_id: { type: String },
-    // user: { type: Schema.Types.ObjectId, ref: "User" },
+    amount: { type: Number },
+    status: { type: String },
+    intent_id: { type: String, },
+    user: { type: Schema.Types.ObjectId, ref: "User" },
     userEmail: { type: String },
   },
   { timestamps: true }

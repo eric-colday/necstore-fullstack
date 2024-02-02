@@ -17,15 +17,6 @@ async function getData() {
   return res.json();
 }
 
-// const getData = () => {
-//   const data = Products;
-
-//   if (data) {
-//     return data;
-//   }
-
-//   return notFound();
-// };
 
 const Featured = async () => {
   const data = await getData();

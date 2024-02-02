@@ -585,34 +585,33 @@ export const Slides = [
   },
 ];
 
-export const Orders = [
+export const Orders = [ 
   {
-    id: 1,
-    createdAt: "2021-06-08T09:47:48.000Z", 
-    total: "20",
+    id: "1",
+    amount: 100.0,
     products: [
       {
         id: 1,
-        title: "T-shirt",
+        title: "T-shirt droit en jersey uni - blanc",
         price: "10",
         image: "/home/1.jpg",
         quantity: 1,
       },
       {
         id: 2,
-        title: "Jean",
+        title: "Pantalon en denim wide leg - Bleu",
         price: "10",
         image: "/home/2.jpg",
         quantity: 1,
       },
     ],
-    status: "En cours",
+    createdAt: "2019-08-30T13:46:57.783Z",
+    status: "terminé",
     intent_id: "aaaa",
   },
   {
-    id: 2,
-    createdAt: "2021-06-08T09:47:48.000Z",
-    total: "50",
+    id: "2",
+    amount: 200.0,
     products: [
       {
         id: 1,
@@ -636,7 +635,61 @@ export const Orders = [
         quantity: 1,
       },
     ],
-    status: "Terminé",
+    createdAt: "2019-08-30T13:46:57.783Z",
+    status: "en attente",
+    intent_id: "aaaa",
+  },
+  {
+    id: "3",
+    amount: 300.0,
+    products: [
+      {
+        id: 1,
+        title: "T-shirt",
+        price: "10",
+        image: "/home/1.jpg",
+        quantity: 1,
+      },
+      {
+        id: 2,
+        title: "Jean",
+        price: "10",
+        image: "/home/2.jpg",
+        quantity: 1,
+      },
+    ],
+    createdAt: "2019-08-30T13:46:57.783Z",
+    status: "terminé",
+    intent_id: "aaaa",
+  },
+  {
+    id: "4",
+    amount: 400.0,
+    products: [
+      {
+        id: 1,
+        title: "T-shirt",
+        price: "10",
+        image: "/home/1.jpg",
+        quantity: 1,
+      },
+      {
+        id: 2,
+        title: "Jean",
+        price: "10",
+        image: "/home/2.jpg",
+        quantity: 1,
+      },
+      {
+        id: 3,
+        title: "Veste",
+        price: "30",
+        image: "/home/4.jpg",
+        quantity: 1,
+      },
+    ],
+    createdAt: "2019-08-30T13:46:57.783Z",
+    status: "en attente",
     intent_id: "aaaa",
   },
 ];

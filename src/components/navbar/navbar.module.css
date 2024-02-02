@@ -95,6 +95,9 @@
 }
 
 .user {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -146,10 +149,11 @@
   .content {
     gap: 10px;
   }
-}
-
-@media screen and (max-width: 348px) {
   .logo {
     font-size: 20px;
   }
+}
+
+@media screen and (max-width: 348px) {
+  
 }

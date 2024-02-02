@@ -8,7 +8,7 @@ import { notFound } from "next/navigation";
 const BASE_URL = process.env.NEXTAUTH_URL;
 
 async function getData(slug) {
-  const res = await fetch(`${BASE_URL}/api/products/` + slug, {
+  const res = await fetch(`${BASE_URL}/api/products/` + slug, { 
     cache: "no-store", 
   });
 
@@ -19,15 +19,6 @@ async function getData(slug) {
   return res.json();
 }
 
-// const getData = (slug) => {
-//   const data = Products.find((item) => item.slug === slug);
-
-//   if (data) {
-//     return data;
-//   }
-
-//   return notFound();
-// };
 
 export async function generateMetadata({ params }) {
   const { slug } = params;

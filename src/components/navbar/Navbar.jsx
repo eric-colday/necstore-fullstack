@@ -50,7 +50,7 @@ const links = [
 ];
 
 const Navbar = () => {
-  const { data: session, status } = useSession();
+  const { data: session, status } = useSession(); 
   const username = session?.user?.username;
   const userImg = session?.user?.image;
   const { theme } = useContext(ThemeContext);
@@ -183,11 +183,9 @@ const Navbar = () => {
                     : `/profil/${username}`
                 }`}
             >
-              <Image
-                src={userImg || "/person/noavatar.png"}
+              <img
+                src={userImg}
                 alt={username}
-                width={30}
-                height={30}
                 className={styles.user}
               />
             </Link>

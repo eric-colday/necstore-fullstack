@@ -7,12 +7,24 @@ import { getAuthSession } from "../../../utils/auth";
 import User from "../../../models/User";
 
 export const GET = async (req) => {
+  const session = await getAuthSession(req);
+  const userEmail = session?.user?.email;
+
+  if (!userEmail) {
+    return new NextResponse(JSON.stringify({ message: "Unauthorized" }), {
+      status: 401,
+    });
+  }
+
   try {
     await connect();
-    const orders = await Order.find();
+    const orders = await Order.find({ userEmail: userEmail });
     return new NextResponse(JSON.stringify(orders), { status: 200 });
   } catch (err) {
-    return new NextResponse("Database Error", { status: 500 });
+    return new NextResponse(
+      JSON.stringify({ message: "Something went wrong!" }),
+      { status: 500 }
+    );
   }
 };
 
@@ -27,7 +39,7 @@ export const POST = async (req) => {
 
       await newOrder.save();
       return new NextResponse(
-        JSON.stringify({ message: "Order has been created" }),
+        JSON.stringify({ message: "Order has been created", id: newOrder._id }),
         { status: 201 }
       );
     } catch (err) {

@@ -9,6 +9,7 @@ import Providers from "../redux/provider";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AuthProvider from "../providers/AuthProvider.jsx";
+import QueryProvider from "../components/QueryProvider.tsx";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,9 +27,10 @@ export default function RootLayout({ children }) {
           <ThemeContextProvider>
             <ThemeProvider>
               <Providers>
+              <QueryProvider>
                 <main>
                   <Navbar />
-                  <div className="container">{children}</div>
+                  <div className="containerGlobal">{children}</div>
                   <Newsletter />
                   <Footer />
                   <ToastContainer
@@ -37,6 +39,7 @@ export default function RootLayout({ children }) {
                     autoClose={3000}
                   />
                 </main>
+              </QueryProvider>
               </Providers>
             </ThemeProvider>
           </ThemeContextProvider>
