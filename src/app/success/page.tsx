@@ -10,15 +10,15 @@ const BASE_URL = process.env.NEXTAUTH_URL;
 const SuccessPage = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const paymentIntent = searchParams.get("payment_intent");
+  // const paymentIntent = searchParams.get("payment_intent");
   const dispatch = useDispatch();
 
   useEffect(() => {
     const makeRequest = async () => { 
       try {
-        await fetch(`${BASE_URL}/api/confirm/${paymentIntent}`, {
-          method: "PUT",
-        });
+        // await fetch(`${BASE_URL}/api/confirm/${paymentIntent}`, {
+        //   method: "PUT",
+        // });
         setTimeout(() => {
           dispatch(resetCart());
           router.push("/commandes");
@@ -29,7 +29,7 @@ const SuccessPage = () => {
     };
 
     makeRequest();
-  }, [paymentIntent, router]);
+  }, [ router]);
 
   return (
     <>
