@@ -13,7 +13,7 @@ const Table = ({ userEmail }) => {
   const { isLoading, error, data } = useQuery({
     queryKey: ["orders"],
     queryFn: () =>
-      fetch(`https://necstore-fullstack.vercel.app/api/orders?userEmail=${userEmail}`).then(
+      fetch(`http://localhost:3000/api/orders?userEmail=${userEmail}`).then(
         (res) => res.json()
       ),
   });
