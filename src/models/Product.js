@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 
 const productSchema = new Schema(
   {
-    img: { type: [String], default: "/noavatar.png" },
+    img: { type: [String], default: "https://res.cloudinary.com/dzer4ijr1/image/upload/v1703108635/users/noavatar_xckjxl.png" },
     title: {
       type: String,
       required: true,

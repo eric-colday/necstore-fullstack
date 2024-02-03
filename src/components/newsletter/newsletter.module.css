@@ -43,3 +43,12 @@
         gap: 10px;
     }
 }
+
+@media screen and (max-width: 371px) {
+    .input {
+        width: 50%;
+    }
+    .button {
+        width: 50%;
+    }
+}

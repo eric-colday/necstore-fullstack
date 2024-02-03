@@ -32,7 +32,7 @@ const Panier = () => {
     const body = {
       products: products,
       amount: totalPrice(),
-      status: "En attente de paiement!",
+      status: "Payé!",
       userEmail: session.user.email,
     };
     try {

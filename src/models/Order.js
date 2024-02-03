@@ -3,8 +3,7 @@ import mongoose from "mongoose";
 const { Schema } = mongoose;
 
 const orderSchema = new Schema(
-  {
-    // userId: { type: String, required: true }, 
+  { 
     products: [
       {
         productId: {
