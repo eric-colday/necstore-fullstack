@@ -19,7 +19,8 @@ async function getData() {
 
 
 const Featured = async () => {
-  const data = await getData();
+  const { products, count } = await getData();
+  console.log(products);
 
   return (
     <div>
@@ -31,7 +32,7 @@ const Featured = async () => {
         </p>
       </div>
       <div className={styles.containerProducts}>
-        <Card data={data} />
+        <Card data={products} />
       </div>
     </div>
   );

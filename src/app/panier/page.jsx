@@ -33,7 +33,7 @@ const Panier = () => {
       products: products,
       amount: totalPrice(),
       status: "Payé!",
-      userEmail: session.user.email,
+      userEmail: session.user.email, 
     };
     try {
       const res = await fetch("/api/orders", {

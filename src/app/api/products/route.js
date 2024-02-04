@@ -10,8 +10,6 @@ export const GET = async (req) => {
 
   const POST_PER_PAGE = 8;
 
-  
-
   try {
     await connect();
     const products = await Product.find({

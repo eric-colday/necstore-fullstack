@@ -10,8 +10,8 @@ const Card = ({ data }) => {
 
   return (
     <div className={styles.grid}>
-      {data.slice(0, 4).map((item) => (
-        <Link href={`/produit/${item.slug}`} key={item._id}>
+      {data?.map((item) => (
+        <Link href={`/produit/${item.slug}`} key={item._id}> 
           <div
             className={styles.card}
             style={
