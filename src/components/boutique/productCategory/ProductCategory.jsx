@@ -19,7 +19,7 @@ async function getData() {
 }
 
 
-const ProductCategory = async () => {
+const ProductCategory = async () => { 
   const data = await getData();
 
   return (

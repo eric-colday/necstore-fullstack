@@ -5,20 +5,27 @@ import ConfettiExplosion from "react-confetti-explosion";
 import { useDispatch } from "react-redux";
 import { resetCart } from "../../redux/cartReducer";
 
-const BASE_URL = process.env.NEXTAUTH_URL;
+
 
 const SuccessPage = () => {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  // const paymentIntent = searchParams.get("payment_intent");
+  const searchParams = new URLSearchParams(window.location.search);;
+  const payment_intent = searchParams.get("payment_intent");
+  
+
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const makeRequest = async () => { 
+    const makeRequest = async () => {
       try {
-        // await fetch(`${BASE_URL}/api/confirm/${paymentIntent}`, {
-        //   method: "PUT",
-        // });
+        await fetch(`/api/confirm/${payment_intent}`, {
+          method: "PUT",
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ payment_intent: payment_intent, status: "Payé!" })
+        });
+        
         setTimeout(() => {
           dispatch(resetCart());
           router.push("/commandes");
@@ -29,16 +36,15 @@ const SuccessPage = () => {
     };
 
     makeRequest();
-  }, [ router]);
+  }, [router]);
 
   return (
     <>
-      <div className="min-h-[calc(100vh-6rem)] md:min-h-[calc(100vh-15rem)] flex items-center justify-center text-center text-2xl text-green-700">
+      <div className="min-h-[calc(100vh-6rem)] md:min-h-[calc(100vh-15rem)] flex items-center justify-center text-center text-2xl">
         <p className="max-w-[600px]">
-          Payment successful. You are being redirected to the orders page.
-          Please do not close the page.
+          Paiement réussi. Vous êtes redirigé vers la page des commandes. Merci de ne pas fermer la page.
         </p>
-      <ConfettiExplosion className="absolute m-auto"/>
+        <ConfettiExplosion className="absolute m-auto" />
       </div>
     </>
   );

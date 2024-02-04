@@ -20,7 +20,7 @@ const orderSchema = new Schema(
     ],
     amount: { type: Number },
     status: { type: String },
-    intent_id: { type: String, },
+    intent_id: { type: String }, 
     user: { type: Schema.Types.ObjectId, ref: "User" },
     userEmail: { type: String },
   },

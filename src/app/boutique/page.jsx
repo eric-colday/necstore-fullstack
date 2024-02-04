@@ -16,7 +16,7 @@ const Boutique = async ({ searchParams }) => {
 
   return (
     <div>
-      <div className={styles.container}>
+      <div className={styles.container}> 
         <div className={styles.content}>
           <h1 className={styles.h2}>
             BOUTIQUE
@@ -28,7 +28,7 @@ const Boutique = async ({ searchParams }) => {
             conseils pour une vie épanouie.
           </p>
         </div>
-        <ProductCategory cat={cat} />
+        <ProductCategory /> 
         <ProductList page={page} cat={cat} />
       </div>
     </div>

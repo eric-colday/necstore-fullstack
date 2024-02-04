@@ -61,7 +61,7 @@ const Inscription = () => {
         <button type="submit" className={styles.button}>
           S'inscrire
         </button>
-        {error && "Erreur de connexion !"}
+        {error && "Erreur de connexion !"} 
       </form>
       <span className={styles.or}>- OR -</span>
       <Link className={styles.link} href="/connexion">
