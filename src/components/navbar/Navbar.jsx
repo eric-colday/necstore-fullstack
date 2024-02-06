@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./navbar.module.css";
 import PersonIcon from "@mui/icons-material/Person";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -59,6 +59,8 @@ const Navbar = () => {
   const [search, setSearch] = useState(false);
   const [query, setQuery] = useState("");
   const data = getData();
+  const [user, setUser] = useState({});
+  const userId = session?.user._id;
 
   const handleShowLinks = () => {
     setShowLinks(!showLinks);
@@ -68,6 +70,17 @@ const Navbar = () => {
     setSearch(true);
     setQuery(e.target.value.toLowerCase());
   };
+
+  useEffect(() => {
+    const fetchUser = async () => { 
+      if (userId) {
+        const response = await fetch(`/api/users/${userId}`);
+        const data = await response.json();
+        setUser(data);
+      }
+    };
+    fetchUser();
+  }, [userId]);
 
   return (
     <div
@@ -176,16 +189,11 @@ const Navbar = () => {
         {status === "authenticated" ? (
           <>
             <Link
-              href={`
-                ${
-                  username === "admin"
-                    ? "https://necadmin-ui.vercel.app/"
-                    : `/profil/${username}`
-                }`}
+              href={`/profile/${user.username}`}
             >
               <img
-                src={userImg}
-                alt={username}
+                src={user.image}
+                alt={user.username}
                 className={styles.user}
               />
             </Link>

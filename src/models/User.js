@@ -12,7 +12,7 @@ const userSchema = new Schema(
       minLength: 3,
       maxLength: 20,
     },
-    fullName: {
+    fullname: {
       type: String, //required: true
     },
     email: {

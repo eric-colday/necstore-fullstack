@@ -12,7 +12,7 @@ async function getData(page, cat) {
     }
   );
   if (!res.ok) {
-    throw new Error("Failed to load data."); 
+    throw new Error("Failed to load data.");  
   }
   return res.json();
 }

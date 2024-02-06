@@ -7,11 +7,14 @@ import { addToCart } from "../../../redux/cartReducer";
 import { Box, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import { useDispatch } from "react-redux";
 
-const ProductInfos = ({data}) => {
+const ProductInfos = ({ data }) => {
   const { theme } = useContext(ThemeContext);
   const [color, setColor] = useState("");
   const [size, setSize] = useState("");
   const [quantity, setQuantity] = useState(1);
+  const [err, setErr] = useState("");
+
+  console.log(err);
 
   const dispatch = useDispatch();
   return (
@@ -109,23 +112,28 @@ const ProductInfos = ({data}) => {
       <div className={styles.ButtonFlex}>
         <button
           className={styles.itemButton}
-          onClick={() =>
-            dispatch(
-              addToCart({
-                id: data.id,
-                title: data.title,
-                price: data.price,
-                image: data.image[0],
-                color,
-                size,
-                quantity,
-              })
-            )
-          }
-          disabled={!color || !size}
+          onClick={() => {
+            if (!color || !size) {
+              setErr("Veuillez sélectionner une couleur et une taille");
+            } else {
+              dispatch(
+                addToCart({
+                  id: data.id,
+                  title: data.title,
+                  price: data.price,
+                  image: data.image[0],
+                  color,
+                  size,
+                  quantity,
+                })
+              );
+              setErr("");
+            }
+          }}
         >
           {data.inStock > 0 ? "Ajouter au panier" : "Rupture de stock"}
         </button>
+        {err && <p className="text-red-400">{err}</p>}
       </div>
     </div>
   );

@@ -20,7 +20,6 @@ async function getData() {
 
 const Featured = async () => {
   const { products, count } = await getData();
-  console.log(products);
 
   return (
     <div>
