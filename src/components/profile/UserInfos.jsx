@@ -81,12 +81,12 @@ const UserInfos = () => {
   };
 
   return (
-    <div className="flex gap-4 w-full max-[914px]:flex-col max-[818px]:flex-row max-[630px]:flex-col ">
+    <div className="flex gap-4 w-full max-[914px]:flex-col">
       {/* DIV 1 */}
       <div
-        className="mt-10 p-8 rounded-2xl w-2/3 max-[914px]:w-full max-[818px]:w-2/3 max-[630px]:w-full"
+        className="mt-10 p-8 rounded-2xl w-2/3 max-[914px]:w-full"
         style={
-          theme === "dark"
+          theme === "dark" 
             ? { backgroundColor: "#0f172a", color: "white" }
             : { backgroundColor: "#E6F4FE", color: "black" }
         }

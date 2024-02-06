@@ -12,12 +12,14 @@
   justify-content: space-between;
 }
 .input {
+  font-size: 12px;
   padding: 10px;
   border: none;
   border-radius: 5px 0 0 5px;
 }
 
 .button {
+  font-size: 12px;
   padding: 10px;
   color: white;
   background: #333;

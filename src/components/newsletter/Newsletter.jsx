@@ -9,10 +9,10 @@ const Newsletter = () => {
     <div className={styles.contact}>
       <div className={styles.wrapper}>
         <div>S'INSCRIRE À LA NEWSLETTER :</div>
-        <div className={styles.mail}>
+        <div>
           <input
             type="text"
-            placeholder="Entre ton e-mail..."
+            placeholder="Entre ton e-mail..." 
             className={styles.input}
           />
           <button className={styles.button}>REJOINS-NOUS</button>
