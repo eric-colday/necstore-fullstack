@@ -15,7 +15,7 @@ const Newsletter = () => {
             placeholder="Entre ton e-mail..." 
             className={styles.input}
           />
-          <button className={styles.button}>REJOINS-NOUS</button>
+          <button className={styles.button}>REJOINS-NOUS </button>
         </div>
         <div className="styles.icons">
           <Link href="#">
