@@ -80,6 +80,19 @@ const UserInfos = () => {
     setUpdate((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
+  const handleDelete = async (userId) => {
+    try {
+      await fetch("/api/users/" + userId, {
+        method: "DELETE",
+      });
+      signOut();
+      router.push("/");
+      toast.error("Compte supprimé");
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   return (
     <div className="flex gap-4 w-full max-[914px]:flex-col">
       {/* DIV 1 */}
@@ -134,11 +147,7 @@ const UserInfos = () => {
           <div className="flex items-center gap-2 cursor-pointer">
             <Link href="/commandes">Mes commandes</Link>
           </div>
-          <div className="flex items-center gap-2 cursor-pointer">
-            <LogoutIcon onClick={signOut} />
-            <span>Déconnexion</span>
-          </div>
-          <div className="flex items-center gap-2 text-red-400 cursor-pointer">
+          <div className="flex items-center gap-2 text-red-400 cursor-pointer" onClick={() => handleDelete(userId)}>
             <DeleteIcon />
             <span>Supprimer le compte</span>
           </div>

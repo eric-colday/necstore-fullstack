@@ -8,33 +8,20 @@ import Pagination from "../../pagination/Pagination";
 const BASE_URL = process.env.NEXTAUTH_URL;
 
 async function getData(page, cat) {
-  const res = await fetch(
-    `${BASE_URL}/api/posts?page=${page}&cat=${cat || ""}`,
+  const res = await fetch(`${BASE_URL}/api/posts?page=${page}&cat=${cat || ""}`, 
     {
       cache: "no-store",
     }
   );
   if (!res.ok) {
-    throw new Error("Failed to load data.");
+    throw new Error("Failed to load data.");  
   }
-
   return res.json();
 }
 
-// const getData = (page, cat) => {
-//   const data = cat ? Posts.filter((item) => item.catSlug === cat) : Posts;
-  
-
-//   if (data) {
-//     return data; 
-//   }
-
-//   return notFound();
-// };
 
 const PostsList = async({ page, cat }) => {
-  const data = await getData(page, cat);
-  const count = data.length;
+  const { posts, count } = await getData(page, cat);
 
   const POST_PER_PAGE = 6;
 
@@ -44,7 +31,7 @@ const PostsList = async({ page, cat }) => {
   return (
     <div className={styles.container}>
       <div className={styles.grid}>
-        {data.map((item) => (
+        {posts?.map((item) => (
           <Link href={`/posts/${item.slug}`} key={item._id}>
             <div className={styles.card}>
               <img src={item.image} alt="blog1" className={styles.cardImage} />

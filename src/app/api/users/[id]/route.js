@@ -55,3 +55,30 @@ export const PUT = async (request, { params }) => {
     });
   }
 };
+
+export const DELETE = async (request, { params }) => {
+  const session = await getAuthSession();
+  const { id } = params;
+
+  if (session) {
+    try {
+      await connect();
+      await User.findByIdAndDelete(id);
+      return new NextResponse(
+        JSON.stringify({ message: "Utilisateur supprimé" }),
+        {
+          status: 201,
+        }
+      );
+    } catch (error) {
+      console.log(error);
+      return new NextResponse(JSON.stringify({ message: "Database Error" }), {
+        status: 500,
+      });
+    }
+  } else {
+    return new NextResponse(JSON.stringify({ message: "Unauthorized" }), {
+      status: 401,
+    });
+  }
+};

@@ -11,7 +11,7 @@ export const metadata = {
 
 const Boutique = async ({ searchParams }) => {
   const page = parseInt(searchParams.page) || 1;
-  const { cat } = searchParams;
+  const { cat } = searchParams; 
 
 
   return (
@@ -20,7 +20,7 @@ const Boutique = async ({ searchParams }) => {
         <div className={styles.content}>
           <h1 className={styles.h2}>
             BOUTIQUE
-            {cat ? ` - ${decodeURIComponent(cat)}` : ""}
+            {cat ? ` - ${decodeURIComponent(cat)}` : ""}  
           </h1>
           <p className={styles.desc}>
             Plongez dans un univers captivant où passion et expertise se
@@ -29,7 +29,7 @@ const Boutique = async ({ searchParams }) => {
           </p>
         </div>
         <ProductCategory /> 
-        <ProductList page={page} cat={cat} />
+        <ProductList page={page} cat={cat} /> 
       </div>
     </div>
   );

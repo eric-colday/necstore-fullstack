@@ -46,7 +46,7 @@ const ProductList = async ({ page, cat }) => {
             </Link>
           ))}
       </div>
-      <Pagination page={page} hasPrev={hasPrev} hasNext={hasNext} />
+      <Pagination page={page} hasPrev={hasPrev} hasNext={hasNext} /> 
     </div>
   );
 };

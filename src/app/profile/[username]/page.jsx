@@ -8,15 +8,16 @@ import Link from "next/link";
 const Profile = () => {
   const { data: session, status } = useSession();
 
-  if (!session) {
+  if (status === "unauthenticated")
     return (
       <Link href={"/connexion"}>
-        <div className="h-screen flex justify-center items-center">Connectez-vous ici</div>
+        <div className="h-screen flex justify-center items-center">
+          Connectez-vous ici
+        </div>
       </Link>
     );
-  }
 
-  return ( 
+  return (
     <div>
       <div className="pb-16 max-[818px]:ml-0 max-[818px]:mt-12 px-10 pt-20 ">
         <div className="grid grid-cols-2 max-[552px]:grid-cols-0 max-[552px]:flex max-[552px]:flex-col max-[552px]:gap-10 items-center">
@@ -24,7 +25,7 @@ const Profile = () => {
             Profil de l'utilisateur
           </h1>
         </div>
-        <UserInfos/> 
+        <UserInfos />
       </div>
     </div>
   );

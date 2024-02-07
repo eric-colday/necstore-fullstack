@@ -15,7 +15,7 @@ export const GET = async (req) => {
     const products = await Product.find({
       ...(cat && { catSlug: cat }),
     }).skip(POST_PER_PAGE * (page - 1)).limit(POST_PER_PAGE);
-    const count = await Product.countDocuments({
+    const count = await Product.countDocuments({ 
       ...(cat && { catSlug: cat }),
     });
     return new NextResponse(JSON.stringify({ products, count }), {

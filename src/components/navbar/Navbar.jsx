@@ -177,14 +177,6 @@ const Navbar = () => {
               {link.title}
             </Link>
           ))}
-          {status === "authenticated" ? (
-            <Link
-              href="https://necadmin-ui.vercel.app/"
-              className={showLinks ? styles.link : styles.hiddenLink}
-            >
-              Dashboard
-            </Link>
-          ) : null}
         </div>
         {status === "authenticated" ? (
           <>
