@@ -135,7 +135,7 @@ const UserInfos = () => {
             <span>
               Rôle :{" "}
               {user.isAdmin ? (
-                <span className="text-red-600">Admin</span>
+                <span className="text-red-400">Admin</span>
               ) : (
                 <span className="text-green-600">Utilisateur</span>
               )}

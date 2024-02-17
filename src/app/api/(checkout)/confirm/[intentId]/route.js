@@ -14,7 +14,7 @@ export const PUT = async (request, { params }) => {
       { new: true }
     );
     return new NextResponse(
-      JSON.stringify({ message: "Mis à jour avec succès!", status: "Payé!", intentId: intentId}),
+      JSON.stringify({ message: "Mis à jour avec succès!"}),
       { status: 200 }
     );
   } catch (error) {

@@ -10,6 +10,7 @@
     "vercel-build": "next build"
   },
   "dependencies": {
+    "@auth/mongodb-adapter": "^2.4.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.16",
@@ -23,6 +24,7 @@
     "axios": "^1.6.7",
     "bcryptjs": "^2.4.3",
     "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.3.0",
     "mongoose": "^8.0.3",
     "next": "^14.1.0",
     "next-auth": "^4.24.5",

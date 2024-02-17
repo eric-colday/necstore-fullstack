@@ -51,8 +51,6 @@ const links = [
 
 const Navbar = () => {
   const { data: session, status } = useSession(); 
-  const username = session?.user?.username;
-  const userImg = session?.user?.image;
   const { theme } = useContext(ThemeContext);
   const [showLinks, setShowLinks] = useState(false);
   const products = useSelector((state) => state.cart.products);
@@ -61,6 +59,7 @@ const Navbar = () => {
   const data = getData();
   const [user, setUser] = useState({});
   const userId = session?.user._id;
+  console.log();
 
   const handleShowLinks = () => {
     setShowLinks(!showLinks);

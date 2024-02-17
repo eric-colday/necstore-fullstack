@@ -10,12 +10,11 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 
 export const authOptions = {
-  // adapter: MongoDBAdapter(clientPromise),
   providers: [
     CredentialsProvider({
       id: "credentials",
       username: "Credentials",
-      async authorize(credentials) {
+      async authorize(credentials) { 
         //Check if the user exists.
         await connect();
 
@@ -47,6 +46,7 @@ export const authOptions = {
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      // adapter: MongoDBAdapter(clientPromise),
     }),
     //   Email({
     //     server: {
@@ -67,9 +67,9 @@ export const authOptions = {
       }
       return token;
     },
-    async session({ session, token }) {
+    async session({ session, token }) { 
       if (token) {
-        session.user = { ...session.user, ...token };
+        session.user = { ...session.user, ...token }; 
       }
       return session;
     },

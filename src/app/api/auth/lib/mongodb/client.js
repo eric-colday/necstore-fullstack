@@ -6,7 +6,7 @@ const uri = process.env.MONGO
 let client
 let clientPromise
 
-if (!process.env.MONGO) { 
+if (!process.env.MONGO) {  
   throw new Error("Please add your Mongo URI to .env.local")
 }
 

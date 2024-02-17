@@ -65,6 +65,7 @@ const CheckoutForm = () => {
       confirmParams: {
         // Make sure to change this to your payment completion page
         return_url: "https://necstore.vercel.app/success",
+        // return_url: "http://localhost:3000/success",
       },
     });
 

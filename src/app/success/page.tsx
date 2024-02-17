@@ -9,23 +9,28 @@ import { resetCart } from "../../redux/cartReducer";
 
 const SuccessPage = () => {
   const router = useRouter();
-  const searchParams = new URLSearchParams(window.location.search);;
+  const searchParams = useSearchParams();
   const payment_intent = searchParams.get("payment_intent");
-  
+
+  console.log(payment_intent);
+
+
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     const makeRequest = async () => {
       try {
-        await fetch(`/api/confirm/${payment_intent}`, {
+        const response = await fetch(`/api/confirm/${payment_intent}`, {
           method: "PUT",
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({ payment_intent: payment_intent, status: "Payé!" })
+          body: JSON.stringify({ status: "Payé!" })
         });
-        
+        const data = await response.json();
+        console.log(data);
+
         setTimeout(() => {
           dispatch(resetCart());
           router.push("/commandes");

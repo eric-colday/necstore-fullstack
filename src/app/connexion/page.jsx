@@ -60,16 +60,16 @@ const Connexion = () => {
           className={styles.input}
         />
         <button className={styles.button}>Se connecter</button>
-        {error && error}
+        {error && error} 
       </form>
-      <button
+      {/* <button
         onClick={() => {
           signIn("email");
         }}
         className={styles.button + " " + styles.google}
       >
         Se connecter avec Google
-      </button>
+      </button> */}
       <span className={styles.or}>- OR -</span>
       <Link className={styles.link} href="/inscription">
         Créer un compte
