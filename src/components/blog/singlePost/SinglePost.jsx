@@ -33,11 +33,11 @@ const SinglePost = ({ data }) => {
         <div className={styles.singlePost}>
           <div className={styles.singlePostWrapper}>
             <img
-              src={data.image}
-              alt={data.title}
+              src={data?.img}
+              alt={data?.title}
               className={styles.singlePostImg}
             />
-            {updateMode ? (
+            {/* {updateMode ? (
               <input
                 type="text"
                 value={title}
@@ -45,11 +45,11 @@ const SinglePost = ({ data }) => {
                 autoFocus
                 onChange={(e) => setTitle(e.target.value)}
               />
-            ) : (
+            ) : ( */}
               <div className={styles.singlePostTitleContainer}>
                 <h1 className={styles.singlePostTitle}>
-                  {data.title}
-                  {
+                  {data?.title}
+                  {/* {
                     <div className={styles.singlePostEdit}>
                       <span
                         className={styles.singlePostIcon}
@@ -64,10 +64,10 @@ const SinglePost = ({ data }) => {
                         <DeleteIcon />
                       </span>
                     </div>
-                  }
+                  } */}
                 </h1>
               </div>
-            )}
+            {/* )} */}
             <div className={styles.singlePostInfo}>
               <span className={styles.singlePostAuthor}>
                 Author:
@@ -77,7 +77,7 @@ const SinglePost = ({ data }) => {
               </span>
               <span className={styles.singlePostDate}>
                 {" "}
-                {new Date(data.createdAt).toLocaleDateString("fr-FR", {
+                {new Date(data?.createdAt).toLocaleDateString("fr-FR", {
                   weekday: "long",
                   year: "numeric",
                   month: "long",
@@ -85,18 +85,18 @@ const SinglePost = ({ data }) => {
                 })}{" "}
               </span>
             </div>
-            {updateMode ? (
+            {/* {updateMode ? (
               <textarea
                 className={styles.singlePostDescInput}
                 value={desc}
                 onChange={(e) => setDesc(e.target.value)}
               />
-            ) : (
-              <p className={styles.singlePostDesc}>{data.content} </p>
-            )}
-            <button className={styles.singlePostButton} onClick={handleUpdate}>
+            ) : ( */}
+              <p className={styles.singlePostDesc} dangerouslySetInnerHTML={{ __html: data?.content}}/>
+              {/* )} */}
+            {/* <button className={styles.singlePostButton} onClick={handleUpdate}>
               Update
-            </button>
+            </button> */}
           </div>
         </div>
         <Sidebar/> 

@@ -8,16 +8,9 @@ const postSchema = new Schema(
     title: {
       type: String,
       required: true,
-      unique: true,
-      minLength: 3,
-      maxLength: 20,
-    },
-    description: {
-      type: String,
-      required: true,
     },
     content: {
-      type: Number,
+      type: String,
       required: true,
     },
     slug: {
@@ -29,6 +22,10 @@ const postSchema = new Schema(
     cat: {
       type: String,
     },
+    // author: {
+    //   type: String,
+    //   required: true,
+    // },
   },
   { timestamps: true }
 );

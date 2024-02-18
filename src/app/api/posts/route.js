@@ -12,7 +12,7 @@ export const GET = async (req) => {
 
   try {
     await connect();
-    const posts = await Post.find({
+    const posts = await Post.find({ 
       ...(cat && { catSlug: cat }),
     }).skip(POST_PER_PAGE * (page - 1)).limit(POST_PER_PAGE);
     const count = await Post.countDocuments({ 

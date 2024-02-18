@@ -1,6 +1,5 @@
 import Images from "../../../components/produit/images/Images";
 import ProductInfos from "../../../components/produit/productInfos/ProductInfos";
-import { Products } from "../../../data";
 import React from "react";
 import styles from "./produit.module.css";
 import { notFound } from "next/navigation";

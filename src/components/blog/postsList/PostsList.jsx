@@ -8,19 +8,19 @@ import Pagination from "../../pagination/Pagination";
 const BASE_URL = process.env.NEXTAUTH_URL;
 
 async function getData(page, cat) {
-  const res = await fetch(`${BASE_URL}/api/posts?page=${page}&cat=${cat || ""}`, 
+  const res = await fetch(
+    `${BASE_URL}/api/posts?page=${page}&cat=${cat || ""}`,
     {
       cache: "no-store",
     }
   );
   if (!res.ok) {
-    throw new Error("Failed to load data.");  
+    throw new Error("Failed to load data.");
   }
   return res.json();
 }
 
-
-const PostsList = async({ page, cat }) => {
+const PostsList = async ({ page, cat }) => {
   const { posts, count } = await getData(page, cat);
 
   const POST_PER_PAGE = 6;
@@ -34,7 +34,7 @@ const PostsList = async({ page, cat }) => {
         {posts?.map((item) => (
           <Link href={`/posts/${item.slug}`} key={item._id}>
             <div className={styles.card}>
-              <img src={item.image} alt="blog1" className={styles.cardImage} />
+              <img src={item.img} alt="blog1" className={styles.cardImage} />
 
               <div className={styles.cardContent}>
                 <div className={styles.date}>
@@ -46,11 +46,6 @@ const PostsList = async({ page, cat }) => {
                     ? `${item.title.slice(0, 28)}...`
                     : item.title}
                 </h2>
-                <p className={styles.p}>
-                  {item.description.length > 50
-                    ? `${item.description.slice(0, 47)}...`
-                    : item.description}
-                </p>
                 <div className={styles.button}>Lire Plus ...</div>
               </div>
             </div>
