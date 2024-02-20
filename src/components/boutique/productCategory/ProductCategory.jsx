@@ -6,7 +6,7 @@ import styles from "./productCategory.module.css";
 const BASE_URL = process.env.NEXTAUTH_URL;
 
 async function getData() {
-  const res = await fetch(`${BASE_URL}/api/categories-products`,
+  const res = await fetch(`${BASE_URL}/api/categoryproducts`,
     {
       cache: "no-store",
     }

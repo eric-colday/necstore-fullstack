@@ -1,22 +1,22 @@
 import { NextResponse } from "next/server";
 import connect from "../../../utils/db";
-import CategoriesProducts from "../../../models/CategoriesProducts";
+import CategoryProduct from "../../../models/CategoryProduct";
 
 export const GET = async (req) => {
 
   try {
     await connect();
-    const categories = await CategoriesProducts.find()
+    const categories = await CategoryProduct.find()
     return new NextResponse(JSON.stringify(categories), { status: 201 });
   } catch (err) {
     return new NextResponse("Database Error", { status: 500 });
   } 
-};
+}; 
 
 
 export const POST = async (req) => {
   const body = await req.json();
-  const newCategory = new CategoriesProducts(body);
+  const newCategory = new CategoryProduct(body);
 
   try {
     await connect();
