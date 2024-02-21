@@ -14,7 +14,7 @@ export const authOptions = {
     CredentialsProvider({
       id: "credentials",
       username: "Credentials",
-      async authorize(credentials) { 
+      async authorize(credentials) {  
         //Check if the user exists.
         await connect();
 
@@ -75,7 +75,7 @@ export const authOptions = {
     },
   },
   pages: {
-    error: "/connexion",
+    error: "/connexion", 
   },
 };
 

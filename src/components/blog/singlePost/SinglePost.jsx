@@ -9,24 +9,6 @@ import Comments from "../comments/Comments";
 import Sidebar from "../../../components/blog/sidebar/Sidebar";
 
 const SinglePost = ({ data }) => {
-  const [updateMode, setUpdateMode] = useState(false);
-  const [title, setTitle] = useState("");
-  const [desc, setDesc] = useState("");
-
-  const handleUpdate = async () => {
-    try {
-      setUpdateMode(false);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  const handleDelete = async () => {
-    try {
-      window.location.replace("/blog");
-    } catch (err) {}
-  };
-
   return (
     <div>
       <div className={styles.container}>
@@ -37,43 +19,12 @@ const SinglePost = ({ data }) => {
               alt={data?.title}
               className={styles.singlePostImg}
             />
-            {/* {updateMode ? (
-              <input
-                type="text"
-                value={title}
-                className={styles.singlePostTitleInput}
-                autoFocus
-                onChange={(e) => setTitle(e.target.value)}
-              />
-            ) : ( */}
-              <div className={styles.singlePostTitleContainer}>
-                <h1 className={styles.singlePostTitle}>
-                  {data?.title}
-                  {/* {
-                    <div className={styles.singlePostEdit}>
-                      <span
-                        className={styles.singlePostIcon}
-                        onClick={() => setUpdateMode(true)}
-                      >
-                        <EditIcon />
-                      </span>
-                      <span
-                        className={styles.singlePostIcon}
-                        onClick={handleDelete}
-                      >
-                        <DeleteIcon />
-                      </span>
-                    </div>
-                  } */}
-                </h1>
-              </div>
-            {/* )} */}
+            <div className={styles.singlePostTitleContainer}>
+              <h1 className={styles.singlePostTitle}>{data?.title}</h1>
+            </div>
             <div className={styles.singlePostInfo}>
               <span className={styles.singlePostAuthor}>
-                Author:
-                <Link href="/#" className="link">
-                  <b> Éric Colday</b>
-                </Link>
+                Auteur :{data.fullname}
               </span>
               <span className={styles.singlePostDate}>
                 {" "}
@@ -85,21 +36,13 @@ const SinglePost = ({ data }) => {
                 })}{" "}
               </span>
             </div>
-            {/* {updateMode ? (
-              <textarea
-                className={styles.singlePostDescInput}
-                value={desc}
-                onChange={(e) => setDesc(e.target.value)}
-              />
-            ) : ( */}
-              <p className={styles.singlePostDesc} dangerouslySetInnerHTML={{ __html: data?.content}}/>
-              {/* )} */}
-            {/* <button className={styles.singlePostButton} onClick={handleUpdate}>
-              Update
-            </button> */}
+            <p
+              className={styles.singlePostDesc}
+              dangerouslySetInnerHTML={{ __html: data?.content }}
+            />
           </div>
         </div>
-        <Sidebar/> 
+        <Sidebar />
       </div>
       <Comments />
     </div>

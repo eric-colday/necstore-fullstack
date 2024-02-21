@@ -3,19 +3,15 @@
 import React from "react";
 import UserInfos from "../../../components/profile/UserInfos";
 import { useSession } from "next-auth/react";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Profile = () => {
-  const { data: session, status } = useSession();
+  const { data: session, status } = useSession(); 
+  const router = useRouter();
 
-  if (status === "unauthenticated")
-    return (
-      <Link href={"/connexion"}>
-        <div className="h-screen flex justify-center items-center">
-          Connectez-vous ici
-        </div>
-      </Link>
-    );
+  if (status === "unauthenticated") {
+    router.push("/connexion");
+  }
 
   return (
     <div>

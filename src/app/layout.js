@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <AuthProvider>
-          <ThemeContextProvider>
+          <ThemeContextProvider> 
             <ThemeProvider>
               <Providers>
               <QueryProvider>

@@ -59,7 +59,6 @@ const Navbar = () => {
   const data = getData();
   const [user, setUser] = useState({});
   const userId = session?.user._id;
-  console.log();
 
   const handleShowLinks = () => {
     setShowLinks(!showLinks);
@@ -180,7 +179,7 @@ const Navbar = () => {
         {status === "authenticated" ? (
           <>
             <Link
-              href={`/profile/${user.username}`}
+              href={`/profile/${user.username}`} 
             >
               <img
                 src={user.image}
