@@ -50,7 +50,7 @@ const links = [
 ];
 
 const Navbar = () => {
-  const { data: session, status } = useSession(); 
+  const { data: session, status } = useSession();
   const { theme } = useContext(ThemeContext);
   const [showLinks, setShowLinks] = useState(false);
   const products = useSelector((state) => state.cart.products);
@@ -59,6 +59,7 @@ const Navbar = () => {
   const data = getData();
   const [user, setUser] = useState({});
   const userId = session?.user._id;
+  const admin = session?.user;
 
   const handleShowLinks = () => {
     setShowLinks(!showLinks);
@@ -70,7 +71,7 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    const fetchUser = async () => { 
+    const fetchUser = async () => {
       if (userId) {
         const response = await fetch(`/api/users/${userId}`);
         const data = await response.json();
@@ -176,18 +177,22 @@ const Navbar = () => {
             </Link>
           ))}
         </div>
+        {status === "authenticated" && admin.isAdmin ? (
+          <Link href="https://necadmin.vercel.app/dashboard" 
+          target="_blank"
+          rel="noopener noreferrer"
+          >Dashboard</Link>
+        ) : null}
         {status === "authenticated" ? (
           <>
-            <Link
-              href={`/profile/${user.username}`} 
-            >
+            <Link href={`/profile/${user.username}`}>
               <img
                 src={user.image}
                 alt={user.username}
                 className={styles.user}
               />
             </Link>
-            <LogoutIcon onClick={signOut} /> 
+            <LogoutIcon onClick={signOut} />
           </>
         ) : (
           <Link href="/connexion">

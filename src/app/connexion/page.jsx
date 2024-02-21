@@ -21,7 +21,7 @@ const Connexion = () => {
 
 
   if (status === "loading") {
-    return <div className={styles.loading}>Loading...</div>;
+    return <div className="flex justify-center items-center">Loading...</div>;
   }
 
   if (status === "authenticated") {
