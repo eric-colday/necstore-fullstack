@@ -23,11 +23,11 @@ const SinglePost = ({ data }) => {
               <h1 className={styles.singlePostTitle}>{data?.title}</h1>
             </div>
             <div className={styles.singlePostInfo}>
-              <span className={styles.singlePostAuthor}>
-                Auteur :{data.fullname}
+              <span className="capitalize">
+                Auteur :{" "}{data.fullname}
               </span>
               <span className={styles.singlePostDate}>
-                {" "}
+                Publié : {" "}
                 {new Date(data?.createdAt).toLocaleDateString("fr-FR", {
                   weekday: "long",
                   year: "numeric",

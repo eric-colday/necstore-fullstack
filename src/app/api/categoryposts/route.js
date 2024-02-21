@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import connect from "../../../utils/db";
-import CategoryPost from "../../../models/CategoryPost";
+import CategoryPost from "../../../models/CategoryProduct";
 
 export const GET = async (req) => {
 
